@@ -21,11 +21,16 @@
     <!-- Platos & Mesas -->
     <string name="gestion_platos">Gestión de Platos</string>
     <string name="nuevo_plato">Registrar Nuevo Plato</string>
+    <string name="buscar_plato">Buscar plato por nombre o categoría&#8230;</string>
     <string name="nombre_plato">Nombre del Plato</string>
     <string name="precio_plato">Precio (S/)</string>
     <string name="categoria">Categoría</string>
     <string name="disponible">Disponible</string>
     <string name="guardar">Guardar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="confirmar_eliminar">¿Está seguro de que desea eliminar este plato?</string>
+    <string name="error_eliminar_pedido">No se puede eliminar: tiene pedidos</string>
 
     <string name="gestion_mesas">Gestión de Mesas</string>
     <string name="nueva_mesa">Registrar Mesa</string>
@@ -37,11 +42,22 @@
     <string name="error_capacidad_invalida">La capacidad debe estar entre 1 y 12</string>
     <string name="error_mesa_existe">La mesa ya existe</string>
     <string name="plato_guardado">Plato guardado correctamente</string>
+    <string name="plato_actualizado">Plato actualizado correctamente</string>
+    <string name="plato_eliminado">Plato eliminado correctamente</string>
     <string name="mesa_guardada">Mesa registrada correctamente</string>
 
+    <!-- Pedidos & Cuentas -->
+    <string name="titulo_pedidos">Toma de Pedidos</string>
+    <string name="pedido_mesa_formato">Pedido - Mesa %1$d</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="btn_agregar_plato">Agregar Plato</string>
+    <string name="total_formato">Total: S/ %1$.2f</string>
+    <string name="btn_cerrar_cuenta">Cerrar Cuenta</string>
+    <string name="btn_compartir_whatsapp">Compartir por WhatsApp</string>
+    <string name="cuenta_cerrada">Cuenta cerrada con éxito. Mesa liberada.</string>
+    <string name="sin_items">No hay consumo en la mesa</string>
+
     <!-- Placeholders -->
-    <string name="titulo_pedidos">Módulo de Pedidos</string>
-    <string name="subtitulo_pedidos">Pantalla temporal de gestión de pedidos</string>
     <string name="titulo_reportes">Módulo de Reportes</string>
     <string name="subtitulo_reportes">Pantalla temporal de reportes de ventas</string>
 </resources>

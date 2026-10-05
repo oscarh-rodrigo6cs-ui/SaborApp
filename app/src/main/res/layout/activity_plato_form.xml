@@ -76,7 +76,7 @@
             android:text="@string/disponible"
             android:textSize="16sp"
             android:checked="true"
-            android:layout_marginBottom="32dp" />
+            android:layout_marginBottom="28dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_guardar"
@@ -87,6 +87,31 @@
             android:textStyle="bold"
             app:cornerRadius="10dp"
             android:backgroundTint="@color/primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_actualizar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/actualizar"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_eliminar"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/eliminar"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/red" />
 
     </LinearLayout>
 </ScrollView>

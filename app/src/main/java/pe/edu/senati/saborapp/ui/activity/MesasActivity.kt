@@ -1,5 +1,6 @@
 package pe.edu.senati.saborapp.ui.activity
 
+import android.content.Intent
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
 import android.widget.Toast
@@ -26,7 +27,10 @@ class MesasActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mesaDao = MesaDao(this)
-        adapter = MesaAdapter(emptyList())
+
+        adapter = MesaAdapter(emptyList()) { mesa ->
+            abrirPedidoMesa(mesa)
+        }
 
         binding.rvMesas.layoutManager = GridLayoutManager(this, 3)
         binding.rvMesas.adapter = adapter
@@ -36,6 +40,13 @@ class MesasActivity : AppCompatActivity() {
         }
 
         cargarMesas()
+    }
+
+    private fun abrirPedidoMesa(mesa: Mesa) {
+        val intent = Intent(this, PedidoActivity::class.java)
+        intent.putExtra("MESA_ID", mesa.id)
+        intent.putExtra("MESA_NUMERO", mesa.numero)
+        startActivity(intent)
     }
 
     private fun guardarMesa() {

@@ -3,6 +3,7 @@ package pe.edu.senati.saborapp.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import pe.edu.senati.saborapp.R
 import pe.edu.senati.saborapp.data.PlatoDao
@@ -24,10 +25,21 @@ class PlatosActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         platoDao = PlatoDao(this)
-        adapter = PlatoAdapter(emptyList())
+
+        adapter = PlatoAdapter(emptyList()) { plato ->
+            val intent = Intent(this, PlatoFormActivity::class.java)
+            intent.putExtra("PLATO_ID", plato.id)
+            startActivity(intent)
+        }
 
         binding.rvPlatos.layoutManager = LinearLayoutManager(this)
         binding.rvPlatos.adapter = adapter
+
+        binding.etBuscarPlato.doAfterTextChanged { text ->
+            val query = text?.toString()?.trim() ?: ""
+            val lista = platoDao.listar(query)
+            adapter.actualizarLista(lista)
+        }
 
         binding.fabAgregarPlato.setOnClickListener {
             startActivity(Intent(this, PlatoFormActivity::class.java))
@@ -37,7 +49,8 @@ class PlatosActivity : AppCompatActivity() {
     }
 
     private fun cargarPlatos() {
-        val lista = platoDao.listar()
+        val query = binding.etBuscarPlato.text?.toString()?.trim() ?: ""
+        val lista = platoDao.listar(query)
         adapter.actualizarLista(lista)
     }
 

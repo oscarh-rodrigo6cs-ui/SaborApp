@@ -46,6 +46,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.activity.CuentaActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.activity.ReportesActivity"
             android:exported="false" />
 

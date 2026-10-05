@@ -8,7 +8,8 @@ import pe.edu.senati.saborapp.databinding.ItemMesaBinding
 import pe.edu.senati.saborapp.model.Mesa
 
 class MesaAdapter(
-    private var listaMesas: List<Mesa>
+    private var listaMesas: List<Mesa>,
+    private val onItemClick: ((Mesa) -> Unit)? = null
 ) : RecyclerView.Adapter<MesaAdapter.MesaViewHolder>() {
 
     fun actualizarLista(nuevaLista: List<Mesa>) {
@@ -30,7 +31,7 @@ class MesaAdapter(
         val mesa = listaMesas[position]
         with(holder.binding) {
             tvNumeroMesa.text = "Mesa ${mesa.numero}"
-            tvCapacidadMesa.text = "${mesa.capacidad} personas"
+            tvCapacidadMesa.text = "${mesa.capacidad} pers."
             tvEstadoMesa.text = mesa.estado
 
             if (mesa.estado.uppercase() == "LIBRE") {
@@ -43,6 +44,10 @@ class MesaAdapter(
                 cardMesa.strokeColor = Color.parseColor("#FFAB91")
                 tvEstadoMesa.setTextColor(Color.parseColor("#D84315"))
                 tvEstadoMesa.setBackgroundColor(Color.parseColor("#FFCCBC"))
+            }
+
+            root.setOnClickListener {
+                onItemClick?.invoke(mesa)
             }
         }
     }

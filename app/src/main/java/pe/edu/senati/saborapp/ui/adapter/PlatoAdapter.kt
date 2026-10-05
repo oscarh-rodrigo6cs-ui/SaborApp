@@ -9,7 +9,8 @@ import pe.edu.senati.saborapp.model.Plato
 import java.util.Locale
 
 class PlatoAdapter(
-    private var listaPlatos: List<Plato>
+    private var listaPlatos: List<Plato>,
+    private val onItemClick: ((Plato) -> Unit)? = null
 ) : RecyclerView.Adapter<PlatoAdapter.PlatoViewHolder>() {
 
     fun actualizarLista(nuevaLista: List<Plato>) {
@@ -42,6 +43,10 @@ class PlatoAdapter(
                 tvDisponibilidadPlato.text = "Agotado"
                 tvDisponibilidadPlato.setBackgroundColor(Color.parseColor("#FFEBEE"))
                 tvDisponibilidadPlato.setTextColor(Color.parseColor("#C62828"))
+            }
+
+            root.setOnClickListener {
+                onItemClick?.invoke(plato)
             }
         }
     }
