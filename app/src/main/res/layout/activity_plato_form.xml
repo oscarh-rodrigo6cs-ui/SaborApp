@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/gray_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nuevo_plato"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark"
+            android:layout_marginBottom="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nombre_plato"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/nombre_plato">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nombre_plato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/precio_plato">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_precio_plato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/categoria"
+            android:textSize="14sp"
+            android:textColor="@color/gray_dark"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/sp_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:drawable/btn_dropdown" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_disponible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disponible"
+            android:textSize="16sp"
+            android:checked="true"
+            android:layout_marginBottom="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_guardar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="@string/guardar"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_actualizar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="@string/actualizar"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            android:backgroundTint="@color/primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_eliminar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="@string/eliminar"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:backgroundTint="@color/red" />
+
+    </LinearLayout>
+</ScrollView>
