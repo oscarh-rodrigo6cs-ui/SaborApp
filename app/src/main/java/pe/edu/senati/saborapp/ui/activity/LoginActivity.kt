@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import pe.edu.senati.saborapp.R
-import pe.edu.senati.saborapp.data.UsuarioDao
 import pe.edu.senati.saborapp.databinding.ActivityLoginBinding
 import pe.edu.senati.saborapp.utils.SessionManager
 
@@ -13,13 +12,11 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var sessionManager: SessionManager
-    private lateinit var usuarioDao: UsuarioDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         sessionManager = SessionManager(this)
-        usuarioDao = UsuarioDao(this)
 
         if (sessionManager.haySesion()) {
             irAMenu()
@@ -33,17 +30,34 @@ class LoginActivity : AppCompatActivity() {
             val usuario = binding.etUsuario.text.toString().trim()
             val clave = binding.etClave.text.toString().trim()
 
-            if (usuario.isEmpty() || clave.isEmpty()) {
-                Toast.makeText(this, getString(R.string.error_campos_vacios), Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            binding.tilUsuario.error = null
+            binding.tilClave.error = null
+
+            var hayError = false
+
+            if (usuario.isEmpty()) {
+                binding.tilUsuario.error = getString(R.string.error_campo_vacio)
+                hayError = true
             }
 
-            val user = usuarioDao.autenticar(usuario, clave)
-            if (user != null) {
-                sessionManager.guardarSesion(user.usuario, user.rol)
+            if (clave.isEmpty()) {
+                binding.tilClave.error = getString(R.string.error_campo_vacio)
+                hayError = true
+            }
+
+            if (hayError) return@setOnClickListener
+
+            val rol: String? = when {
+                (usuario.equals("admin", ignoreCase = true)) && (clave == "1234") -> "ADMIN"
+                (usuario.equals("mozo", ignoreCase = true)) && (clave == "1234") -> "MOZO"
+                else -> null
+            }
+
+            if (rol != null) {
+                sessionManager.guardarSesion(usuario, rol)
                 irAMenu()
             } else {
-                Toast.makeText(this, getString(R.string.error_login), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.error_credenciales), Toast.LENGTH_SHORT).show()
             }
         }
     }

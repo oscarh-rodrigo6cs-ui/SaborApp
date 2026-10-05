@@ -11,16 +11,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SaborApp">
+
+        <!-- LoginActivity como LAUNCHER -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true"
+            android:theme="@style/Theme.SaborApp.NoActionBar"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.activity.MenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SaborApp.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.PlatosActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.activity.MesasActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.activity.PedidoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.activity.ReportesActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

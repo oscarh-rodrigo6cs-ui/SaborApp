@@ -2,20 +2,9 @@
 <resources>
     <color name="primary">#D84315</color>
     <color name="primary_dark">#BF360C</color>
-    <color name="primary_light">#FF7043</color>
-    <color name="accent">#FFAB00</color>
-
-    <color name="black">#FF000000</color>
+    <color name="background">#FAFAFA</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray_light">#F5F5F5</color>
+    <color name="black">#FF000000</color>
     <color name="gray_dark">#424242</color>
-    <color name="gray_medium">#9E9E9E</color>
-
-    <!-- Table status colors -->
-    <color name="mesa_libre">#2E7D32</color>
-    <color name="mesa_libre_bg">#E8F5E9</color>
-    <color name="mesa_ocupada">#D84315</color>
-    <color name="mesa_ocupada_bg">#FBE9E7</color>
-
-    <color name="red">#D32F2F</color>
+    <color name="gray_light">#EEEEEE</color>
 </resources>

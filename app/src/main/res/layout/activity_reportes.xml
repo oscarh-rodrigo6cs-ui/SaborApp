@@ -1,88 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@color/gray_light">
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/reportes_titulo"
+        android:text="@string/titulo_reportes"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/primary_dark"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="8dp" />
 
-    <!-- Card Venta del Día -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/primary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/tv_venta_dia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Venta Total del Día: S/ 0.00"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/tv_pedidos_dia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pedidos Atendidos Hoy: 0"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Card Top 5 Platos -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/top_5_platos"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary_dark"
-                android:layout_marginBottom="12dp" />
-
-            <TextView
-                android:id="@+id/tv_top_platos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:lineSpacingExtra="6dp" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        android:text="@string/subtitulo_reportes"
+        android:textSize="16sp"
+        android:textColor="@color/gray_dark"
+        android:gravity="center" />
 
 </LinearLayout>

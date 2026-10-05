@@ -20,22 +20,28 @@ class MenuActivity : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
+        val usuario = sessionManager.obtenerUsuario()
         val rol = sessionManager.obtenerRol()
-        binding.tvRol.text = getString(R.string.rol_usuario, rol)
+
+        binding.tvUsuarioRol.text = getString(R.string.usuario_rol_formato, usuario, rol)
 
         if (rol.uppercase() == "MOZO") {
-            binding.cardReportes.visibility = View.GONE
+            binding.btnReportes.visibility = View.GONE
         }
 
-        binding.cardPlatos.setOnClickListener {
+        binding.btnPlatos.setOnClickListener {
             startActivity(Intent(this, PlatosActivity::class.java))
         }
 
-        binding.cardMesas.setOnClickListener {
+        binding.btnMesas.setOnClickListener {
             startActivity(Intent(this, MesasActivity::class.java))
         }
 
-        binding.cardReportes.setOnClickListener {
+        binding.btnPedidos.setOnClickListener {
+            startActivity(Intent(this, PedidoActivity::class.java))
+        }
+
+        binding.btnReportes.setOnClickListener {
             startActivity(Intent(this, ReportesActivity::class.java))
         }
 

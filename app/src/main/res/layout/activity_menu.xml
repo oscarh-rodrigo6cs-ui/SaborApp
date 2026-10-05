@@ -5,23 +5,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@color/gray_light">
+    android:background="@color/background">
 
     <TextView
-        android:id="@+id/tv_titulo"
+        android:id="@+id/tv_titulo_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/menu_titulo"
+        android:text="@string/titulo_menu"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="@color/primary_dark"
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:id="@+id/tv_rol"
+        android:id="@+id/tv_usuario_rol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rol_usuario"
+        android:text="@string/usuario_rol_formato"
         android:textSize="16sp"
         android:textColor="@color/gray_dark"
         android:layout_marginBottom="24dp" />
@@ -36,113 +36,45 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Card Platos -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_platos"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_platos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
+                android:text="@string/btn_platos"
+                android:textSize="16sp"
                 android:layout_marginBottom="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:backgroundTint="@color/primary"
+                app:icon="@android:drawable/ic_menu_agenda" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@android:drawable/ic_menu_agenda"
-                        app:tint="@color/primary"
-                        android:contentDescription="@string/gestion_platos" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/gestion_platos"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="16dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Card Mesas -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_mesas"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mesas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
+                android:text="@string/btn_mesas"
+                android:textSize="16sp"
                 android:layout_marginBottom="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:backgroundTint="@color/primary"
+                app:icon="@android:drawable/ic_menu_sort_by_size" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@android:drawable/ic_menu_sort_by_size"
-                        app:tint="@color/primary"
-                        android:contentDescription="@string/gestion_mesas" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/gestion_mesas"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="16dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Card Reportes -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_reportes"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pedidos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
+                android:text="@string/btn_pedidos"
+                android:textSize="16sp"
                 android:layout_marginBottom="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:backgroundTint="@color/primary"
+                app:icon="@android:drawable/ic_menu_edit" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@android:drawable/ic_menu_view"
-                        app:tint="@color/primary"
-                        android:contentDescription="@string/reportes" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/reportes"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="16dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reportes"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/btn_reportes"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/primary"
+                app:icon="@android:drawable/ic_menu_view" />
 
         </LinearLayout>
     </ScrollView>
@@ -151,7 +83,7 @@
         android:id="@+id/btn_salir"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:text="@string/salir"
+        android:text="@string/btn_salir"
         android:textSize="16sp"
         android:backgroundTint="@color/primary_dark" />
 

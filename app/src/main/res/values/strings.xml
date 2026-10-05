@@ -1,61 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SaborApp</string>
-    <string name="login_titulo">SaborApp - Iniciar Sesión</string>
+    <string name="subtitulo_app">Pollería El Buen Sabor</string>
+    <string name="login_titulo">Iniciar Sesión</string>
     <string name="usuario">Usuario</string>
     <string name="clave">Contraseña</string>
     <string name="ingresar">Ingresar</string>
-    <string name="error_login">Usuario o contraseña incorrectos</string>
-    <string name="error_campos_vacios">Por favor complete todos los campos</string>
+    <string name="error_credenciales">Credenciales incorrectas</string>
+    <string name="error_campo_vacio">Este campo es obligatorio</string>
 
     <!-- Menu -->
-    <string name="menu_titulo">Menú Principal</string>
-    <string name="rol_usuario">Rol: %1$s</string>
-    <string name="gestion_platos">Gestión de Platos</string>
-    <string name="gestion_mesas">Gestión de Mesas</string>
-    <string name="gestion_pedidos">Pedidos y Cuentas</string>
-    <string name="reportes">Reportes de Ventas</string>
-    <string name="salir">Cerrar Sesión</string>
+    <string name="titulo_menu">Menú Principal</string>
+    <string name="usuario_rol_formato">Bienvenido: %1$s (%2$s)</string>
+    <string name="btn_platos">Platos</string>
+    <string name="btn_mesas">Mesas</string>
+    <string name="btn_pedidos">Pedidos</string>
+    <string name="btn_reportes">Reportes</string>
+    <string name="btn_salir">Cerrar Sesión</string>
 
-    <!-- Platos -->
-    <string name="platos_titulo">Platos del Restaurante</string>
-    <string name="buscar_plato">Buscar plato&#8230;</string>
-    <string name="nombre_plato">Nombre del Plato</string>
-    <string name="precio_plato">Precio (S/)</string>
-    <string name="categoria">Categoría</string>
-    <string name="disponible">Disponible</string>
-    <string name="guardar">Guardar</string>
-    <string name="actualizar">Actualizar</string>
-    <string name="eliminar">Eliminar</string>
-    <string name="nuevo_plato">Nuevo Plato</string>
-    <string name="plato_guardado">Plato guardado correctamente</string>
-    <string name="plato_actualizado">Plato actualizado correctamente</string>
-    <string name="plato_eliminado">Plato eliminado correctamente</string>
-    <string name="error_eliminar_plato">No se puede eliminar el plato porque está asociado a pedidos</string>
-
-    <!-- Mesas -->
-    <string name="mesas_titulo">Mesas del Restaurante</string>
-    <string name="numero_mesa">Número de Mesa</string>
-    <string name="capacidad_mesa">Capacidad (Personas)</string>
-    <string name="estado_mesa">Estado: %1$s</string>
-    <string name="libre">LIBRE</string>
-    <string name="ocupada">OCUPADA</string>
-    <string name="nueva_mesa">Agregar Mesa</string>
-    <string name="mesa_guardada">Mesa agregada correctamente</string>
-
-    <!-- Pedidos -->
-    <string name="pedido_titulo">Pedido - Mesa %1$d</string>
-    <string name="cantidad">Cantidad</string>
-    <string name="agregar_plato">Agregar Plato</string>
-    <string name="total">Total: S/ %1$.2f</string>
-    <string name="cerrar_cuenta">Cerrar Cuenta</string>
-    <string name="compartir_whatsapp">Compartir por WhatsApp</string>
-    <string name="cuenta_cerrada">Cuenta cerrada con éxito. La mesa está LIBRE.</string>
-    <string name="sin_items">No hay platos agregados al pedido</string>
-
-    <!-- Reportes -->
-    <string name="reportes_titulo">Reporte de Ventas</string>
-    <string name="venta_dia">Venta Total del Día: S/ %1$.2f</string>
-    <string name="pedidos_dia">Pedidos Atendidos Hoy: %1$d</string>
-    <string name="top_5_platos">Top 5 Platos Más Vendidos</string>
+    <!-- Placeholders -->
+    <string name="titulo_platos">Módulo de Platos</string>
+    <string name="subtitulo_platos">Pantalla temporal de gestión de platos</string>
+    <string name="titulo_mesas">Módulo de Mesas</string>
+    <string name="subtitulo_mesas">Pantalla temporal de gestión de mesas</string>
+    <string name="titulo_pedidos">Módulo de Pedidos</string>
+    <string name="subtitulo_pedidos">Pantalla temporal de gestión de pedidos</string>
+    <string name="titulo_reportes">Módulo de Reportes</string>
+    <string name="subtitulo_reportes">Pantalla temporal de reportes de ventas</string>
 </resources>
