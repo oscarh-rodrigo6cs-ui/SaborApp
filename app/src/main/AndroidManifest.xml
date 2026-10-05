@@ -34,6 +34,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.activity.PlatoFormActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.activity.MesasActivity"
             android:exported="false" />
 

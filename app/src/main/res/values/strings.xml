@@ -18,11 +18,28 @@
     <string name="btn_reportes">Reportes</string>
     <string name="btn_salir">Cerrar Sesión</string>
 
+    <!-- Platos & Mesas -->
+    <string name="gestion_platos">Gestión de Platos</string>
+    <string name="nuevo_plato">Registrar Nuevo Plato</string>
+    <string name="nombre_plato">Nombre del Plato</string>
+    <string name="precio_plato">Precio (S/)</string>
+    <string name="categoria">Categoría</string>
+    <string name="disponible">Disponible</string>
+    <string name="guardar">Guardar</string>
+
+    <string name="gestion_mesas">Gestión de Mesas</string>
+    <string name="nueva_mesa">Registrar Mesa</string>
+    <string name="numero_mesa">Número de Mesa</string>
+    <string name="capacidad_mesa">Capacidad (1-12 personas)</string>
+    <string name="guardar_mesa">Guardar Mesa</string>
+
+    <string name="error_precio_invalido">El precio debe ser mayor a 0</string>
+    <string name="error_capacidad_invalida">La capacidad debe estar entre 1 y 12</string>
+    <string name="error_mesa_existe">La mesa ya existe</string>
+    <string name="plato_guardado">Plato guardado correctamente</string>
+    <string name="mesa_guardada">Mesa registrada correctamente</string>
+
     <!-- Placeholders -->
-    <string name="titulo_platos">Módulo de Platos</string>
-    <string name="subtitulo_platos">Pantalla temporal de gestión de platos</string>
-    <string name="titulo_mesas">Módulo de Mesas</string>
-    <string name="subtitulo_mesas">Pantalla temporal de gestión de mesas</string>
     <string name="titulo_pedidos">Módulo de Pedidos</string>
     <string name="subtitulo_pedidos">Pantalla temporal de gestión de pedidos</string>
     <string name="titulo_reportes">Módulo de Reportes</string>
