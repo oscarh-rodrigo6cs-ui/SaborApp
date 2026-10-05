@@ -1,5 +1,6 @@
 package pe.edu.senati.saborapp.ui.activity
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -82,36 +83,42 @@ class CuentaActivity : AppCompatActivity() {
     }
 
     private fun compartirPorWhatsapp() {
+        val pedId = pedidoActual?.id ?: 0
         val total = listaDetalles.sumOf { it.subtotal }
+
         val sb = StringBuilder()
-        sb.append("🍽️ *SABORAPP - TICKET DE CONSUMO* 🍽️\n")
-        sb.append("----------------------------------\n")
-        if (numeroMesa > 0) {
-            sb.append("📍 *Mesa:* ").append(numeroMesa).append("\n\n")
-        }
+        sb.append("--- SABORAPP ---\n")
+        sb.append("Pedido #").append(pedId).append(" - Mesa ").append(if (numeroMesa > 0) numeroMesa else 1).append("\n")
 
         if (listaDetalles.isEmpty()) {
-            sb.append("No hay productos registrados.\n")
+            sb.append("Sin consumo registrado.\n")
         } else {
             for (item in listaDetalles) {
-                sb.append("• ").append(item.cantidad).append("x ")
+                sb.append(item.cantidad).append("x ")
                     .append(item.nombrePlato).append(" - S/ ")
                     .append(String.format(Locale.getDefault(), "%.2f", item.subtotal)).append("\n")
             }
         }
 
-        sb.append("----------------------------------\n")
-        sb.append("💰 *TOTAL:* S/ ").append(String.format(Locale.getDefault(), "%.2f", total)).append("\n\n")
+        sb.append("Total a Pagar: S/ ").append(String.format(Locale.getDefault(), "%.2f", total)).append("\n")
         sb.append("¡Gracias por su preferencia!")
 
-        val sendIntent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, sb.toString())
+        val sendIntent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, sb.toString())
+            setPackage("com.whatsapp")
         }
 
-        val shareIntent = Intent.createChooser(sendIntent, "Compartir ticket vía")
-        startActivity(shareIntent)
+        try {
+            startActivity(sendIntent)
+        } catch (e: ActivityNotFoundException) {
+            val fallbackIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, sb.toString())
+            }
+            val chooser = Intent.createChooser(fallbackIntent, "Compartir ticket por")
+            startActivity(chooser)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

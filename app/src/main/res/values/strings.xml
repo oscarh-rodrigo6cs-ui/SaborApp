@@ -57,7 +57,12 @@
     <string name="cuenta_cerrada">Cuenta cerrada con éxito. Mesa liberada.</string>
     <string name="sin_items">No hay consumo en la mesa</string>
 
-    <!-- Placeholders -->
-    <string name="titulo_reportes">Módulo de Reportes</string>
-    <string name="subtitulo_reportes">Pantalla temporal de reportes de ventas</string>
+    <!-- Reportes -->
+    <string name="reportes_ventas">Reporte de Ventas</string>
+    <string name="venta_del_dia">Venta del Día:</string>
+    <string name="total_pedidos_dia">Total de Pedidos:</string>
+    <string name="ticket_promedio">Ticket Promedio:</string>
+    <string name="top_platos_vendidos">Top 5 Platos Más Vendidos</string>
+    <string name="btn_compartir_resumen">Compartir Resumen del Día</string>
+    <string name="acceso_denegado_admin">Acceso denegado: solo Administradores</string>
 </resources>
